@@ -15,7 +15,7 @@
             "type": "String"
         },
         "appInsightsName": {
-            "defaultValue": "fin-devops-ai",
+            "defaultValue": "test-devops-ai",
             "type": "String"
         },        
         "sku": {
