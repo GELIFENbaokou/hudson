@@ -1,6 +1,8 @@
 # This is a basic workflow that is manually triggered
 
 name: finn
+env:
+    targetEnv: test
 
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
@@ -36,7 +38,6 @@ jobs:
       uses: Azure/arm-deploy@v1
       with:
       # Paste output of `az ad sp create-for-rbac` as value of secret variable: AZURE_CREDENTIALS
-       creds: ${{ secrets.FINN }}
        resourceGroupName: hudson-finn-devops
        template: ./ARM-Templates/container-webapp-template.json
        parameters: webAppName=zixin-devops-${{ env.targetEnv }}
