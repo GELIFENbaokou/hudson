@@ -33,3 +33,7 @@ jobs:
       with:
       # Paste output of `az ad sp create-for-rbac` as value of secret variable: AZURE_CREDENTIALS
        creds: ${{ secrets.FINN }}
+       subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
+       resourceGroupName: hudson-finn-devops
+       template: ./ARM-Templates/container-webapp-template.json
+       parameters: webAppName=<Your unique webapp prefix>-${{ env.targetEnv }}
